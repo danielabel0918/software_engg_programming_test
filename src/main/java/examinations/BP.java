@@ -1,18 +1,25 @@
-class MRI extends Examination {
-    private String imageURL;
-    private double fieldStrength;
+package examinations;
 
-    public MRI(LocalDate dateOfExamination, String imageURL, double fieldStrength) {
-        super(dateOfExamination);
-        this.imageURL = imageURL;
-        this.fieldStrength = fieldStrength;
+import java.time.LocalDate;
+
+public class BP{
+    int SP;
+    int DP;
+    LocalDate testDate;
+    String type;
+    public BP(int SP, int DP, LocalDate testDate, String type) {
+        this.SP=SP;
+        this.DP=DP;
+        this.testDate=testDate;
+        this.type=type;
     }
 
-    @Override
-    public String getExaminationDetails() {
-        return "MRI Scan Date: " + dateOfExamination.toString() +
-                "\nImage URL: " + imageURL +
-                "\nField Strength: " + fieldStrength + " Tesla";
+    public String getBP(){
+        return SP+" over "+DP;
     }
+
+    public LocalDate getDate(){
+        return testDate;
+    }
+
 }
-
